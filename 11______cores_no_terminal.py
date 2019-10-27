@@ -9,14 +9,14 @@ os seus programas em Python. Veja como utilizar o código \033[m com todas as su
 from funcoes import cabecalho
 
 
-def ansi(a='', b='', c=''):
-    """Dicionário com códigos de escape sequence ANSI para configurar cores no terminal.
+def ansi(a: str = '', b: str = '', c: str = '') -> str:
+    """-> Dicionário com códigos de escape sequence ANSI para configurar cores no terminal.
 
-    A ordem dos parâmetros é irrelevante, bem como é possível colocar dois parâmetros do mesmo tipo:
+    A ordem dos parâmetros é irrelevante, bem como é possível colocar dois parâmetros do mesmo estilo:
     Ex.: ansi('bold', 'underline') => Coloca o caracter em BOLD e UNDERLINE
 
            style       back
-     \033 [  0 ; 33 ;  44   m
+     \\033 [  0 ; 33 ;  44   m
                 text
     Obs.: a ordem dos números não é importante; não é necessário utilizar todos os números.
 
@@ -40,10 +40,8 @@ def ansi(a='', b='', c=''):
     :type c: str
     :return: escape sequence ANSI
     :rtype: str
-
     """
-    dicionario = {'': '',
-                  'none': 0,
+    dicionario = {'none': 0,
                   'bold': 1,
                   'underline': 4,
                   'negative': 7,
@@ -63,8 +61,16 @@ def ansi(a='', b='', c=''):
                   'f_magenta': 45,
                   'f_cyan': 46,
                   'f_cinza': 47}
+    if a != '' and b != '' and c != '':
+        cor = f'\033[{dicionario[a]};{dicionario[b]};{dicionario[c]}m'
+    elif a != '' and b != '':
+        cor = f'\033[{dicionario[a]};{dicionario[b]}m'
+    elif a != '':
+        cor = f'\033[{dicionario[a]}m'
+    else:
+        cor = '\033[m'
 
-    return f'\033[{dicionario[a]};{dicionario[b]};{dicionario[c]}m'
+    return cor
 
 
 if __name__ == '__main__':
