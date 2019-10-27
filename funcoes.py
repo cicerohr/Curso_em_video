@@ -111,7 +111,7 @@ def cores(cor: str) -> str:
 def ansi(a: str = '', b: str = '', c: str = '') -> str:
     """-> Dicionário com códigos de escape sequence ANSI para configurar cores no terminal.
 
-    A ordem dos parâmetros é irrelevante, bem como é possível colocar dois parâmetros do mesmo tipo:
+    A ordem dos parâmetros é irrelevante, bem como é possível colocar dois parâmetros do mesmo estilo:
     Ex.: ansi('bold', 'underline') => Coloca o caracter em BOLD e UNDERLINE
 
            style       back
@@ -140,9 +140,7 @@ def ansi(a: str = '', b: str = '', c: str = '') -> str:
     :return: escape sequence ANSI
     :rtype: str
     """
-    dicionario = {'': '',
-                  'none': 0,
-                  'bold': 1,
+    dicionario = {'bold': 1,
                   'underline': 4,
                   'negative': 7,
                   'branco': 30,
@@ -161,8 +159,16 @@ def ansi(a: str = '', b: str = '', c: str = '') -> str:
                   'f_magenta': 45,
                   'f_cyan': 46,
                   'f_cinza': 47}
+    if a != '' and b != '' and c != '':
+        cor = f'\033[{dicionario[a]};{dicionario[b]};{dicionario[c]}m'
+    elif a != '' and b != '':
+        cor = f'\033[{dicionario[a]};{dicionario[b]}m'
+    elif a != '':
+        cor = f'\033[{dicionario[a]}m'
+    else:
+        cor = '\033[m'
 
-    return f'\033[{dicionario[a]};{dicionario[b]};{dicionario[c]}m'
+    return cor
 
 
 # -------------------- programa de teste --------------------
