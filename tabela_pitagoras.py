@@ -1,17 +1,17 @@
 from funcoes import ansi
 
-for li in range(0, 11):
-    print(f'{ansi("negative", "bold")}{li:3} {ansi()}', end='')
-    for co in range(1, 11):
-        if li == 0 and co < 10:
-            print(f'{ansi("negative", "bold")}{co:3} {ansi()}', end='')
-        elif li == 0 and co == 10:
-            print(f'{ansi("negative", "bold")}{co:3} {ansi()}')
+for linha in range(0, 11):
+    print(f'{ansi("negative", "bold")}{linha:3} {ansi()}', end='')
+    for coluna in range(1, 11):
+        if linha == 0 and coluna < 10:
+            print(f'{ansi("negative", "bold")}{coluna:3} {ansi()}', end='')
+        elif linha == 0 and coluna == 10:
+            print(f'{ansi("negative", "bold")}{coluna:3} {ansi()}')
         else:
-            if co == 10 and li != 10:
-                print(f'{co * li:3} ')
+            if coluna == 10 and linha != 10:
+                print(f'{coluna * linha:3} ')
             else:
-                if li == co:
-                    print(f'{ansi("negative", "bold", "vermelho")}{co * li:3} {ansi()}', end='')
+                if linha == coluna:
+                    print(f'{ansi("negative", "bold", "vermelho")}{coluna * linha:3} {ansi()}', end='')
                 else:
-                    print(f'{co * li:3} ', end='')
+                    print(f'{coluna * linha:3} ', end='')
