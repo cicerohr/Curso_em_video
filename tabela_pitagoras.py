@@ -4,7 +4,7 @@ for linha in range(0, 11):
     print(f'{ansi("negative", "bold")}{linha:3} {ansi()}', end='')
     for coluna in range(1, 11):
         if linha == 0 and coluna < 10:
-            print(f'{ansi("negative", "bold")}{coluna:3} {ansi()}', end='')
+            print(f'{ansi("negative", "bold")}{coluna:3} ', end='')
         elif linha == 0 and coluna == 10:
             print(f'{ansi("negative", "bold")}{coluna:3} {ansi()}')
         else:
