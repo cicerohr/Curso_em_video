@@ -84,15 +84,15 @@ def ansi(a: str = '', b: str = '', c: str = '') -> str:
 
 
 def cria_cabecalho(s: int, c: str = '-', t: int = 50) -> object:
-    """-> Cria um cabecalho centralizado para cada opção
+    """-> Cria um cabeçalho centralizado para cada opção
 
-    :param s: seleção da lista opcoes
+    :param s: seleção da lista opções
     :type s: int
-    :param c: (opcional) caracter para a impressao
+    :param c: (opcional) caracter para a impressão
     :type c: str
-    :param t: (opcional) largura do cabecalho
+    :param t: (opcional) largura do cabeçalho
     :type t: int
-    :return: imprime no terminal o cabecalho
+    :return: imprime no terminal o cabeçalho
     :rtype: object
     """
     opcoes = ['Menu Principal', 'Pessoas Cadastradas', 'Novo Cadastro', 'Saindo do sistema... Até logo!',
