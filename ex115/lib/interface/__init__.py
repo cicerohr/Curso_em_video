@@ -27,7 +27,7 @@ def ansi(a: str = '', b: str = '', c: str = '') -> str:
     Ex.: ansi('bold', 'underline') => Coloca o caracter em BOLD e UNDERLINE
 
            style       back
-     \\033 [  0 ; 33 ;  44   m
+     \033 [  0 ; 33 ;  44   m
                 text
     Obs.: a ordem dos números não é importante; não é necessário utilizar todos os números.
 
