@@ -9,6 +9,7 @@ O sistema só vai ter 2 opções:
 
 """
 from ex115.lib.interface import *
+from ex115.lib.arquivo import *
 
 cria_cabecalho(4, '=')
 
