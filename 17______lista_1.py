@@ -71,7 +71,7 @@ if __name__ == '__main__':
         print(f'No índice {k} encontrei o valor {v}!')
         ''')
     for k, v in enumerate(valores):
-        print(f'No índice {k} encotrei o valor {v}.')
+        print(f'No índice {k} encontrei o valor {v}.')
 
     print('''
     novos_valores = []
